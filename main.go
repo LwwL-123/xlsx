@@ -131,7 +131,7 @@ func ToAlphaString(value int) string {
 func removeLast(value string) string {
 	var numStr string
 	for _, char := range value {
-		if (char >= '0' && char <= '9') || char == '.' {
+		if (char >= '0' && char <= '9') || char == '.' || char == ',' {
 			numStr += string(char)
 		} else {
 			return numStr
