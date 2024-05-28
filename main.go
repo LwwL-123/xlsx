@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"github.com/eqinox76/xls"
-	"github.com/xuri/excelize/v2"
 	"io/ioutil"
 	"log"
 	"path"
@@ -74,6 +73,15 @@ func main() {
 
 			valA10 := sheet1.Row(5).Col(1)
 			templateFile.SetCellValue("1", "A3", valA10)
+
+			porosity := sheet1.Row(35).Col(1)
+			templateFile.SetCellValue("1", "M3", removeLast(porosity))
+
+			bulk := sheet1.Row(33).Col(1)
+			templateFile.SetCellValue("1", "N3", removeLast(bulk))
+
+			apparent := sheet1.Row(34).Col(1)
+			templateFile.SetCellValue("1", "O3", removeLast(apparent))
 
 			// 将当前Excel表格数据作为新的sheet添加到新的Excel文件中
 			newSheetName := valA10
